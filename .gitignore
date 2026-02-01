@@ -1,0 +1,43 @@
+# ===== Gradle =====
+.gradle/
+build/
+app/build/
+
+# ===== Local config (personal) =====
+local.properties
+
+# ===== IDE (Android Studio / IntelliJ) =====
+.idea/
+*.iml
+
+# Optional: if you prefer selective instead of full .idea ignore, remove `.idea/`
+# and uncomment below instead
+# .idea/caches
+# .idea/libraries
+# .idea/modules.xml
+# .idea/workspace.xml
+# .idea/navEditor.xml
+# .idea/assetWizardSettings.xml
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Signing / Keystore (VERY IMPORTANT) =====
+*.jks
+*.keystore
+key.properties
+
+# ===== Native build =====
+.externalNativeBuild
+.cxx
+
+# ===== Logs =====
+*.log
+
+# ===== Captures =====
+captures/
+
+# ===== Release outputs =====
+*.apk
+*.aab

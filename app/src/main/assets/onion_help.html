@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onion Links</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #050712, #0b1020);
+            color: #f5f7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            opacity: 0.75;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 1.6rem;
+            padding: 0.9rem 1rem;
+            background: linear-gradient(135deg, #44ffd2, #0099ff);
+            color: #02040a;
+            border: none;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,255,210,0.35);
+        }
+
+        .note {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            margin-top: 1.6rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>.onion links</h2>
+
+    <p>
+        DarkIncognito supports private browsing and search. Some websites with <b>.onion</b> addresses are part of the Tor network.
+    </p>
+
+    <p>
+        These addresses are special and designed to be accessed through Tor. This page helps you discover them easily.
+    </p>
+
+    <p>
+        To explore onion sites, use public Tor search engines. You can search for hidden services and open them safely in a Tor-enabled environment.
+    </p>
+
+    <button onclick="go()">Search with Ahmia</button>
+
+    <div class="note">
+        Enjoy private, secure, and smooth browsing with DarkIncognito.
+    </div>
+</div>
+
+<script>
+    function go(){
+        location.href = "https://ahmia.fi/";
+    }
+</script>
+
+</body>
+</html>

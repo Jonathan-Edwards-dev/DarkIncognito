@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DarkIncognito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- UI FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- SLIDE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+          box-sizing: border-box;
+          font-family: Inter, system-ui, sans-serif;
+        }
+
+        body {
+          margin: 0;
+          height: 100vh;
+          background: url("educational.png") center / cover no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .app {
+          width: 100%;
+          max-width: 420px;
+          height: 100%;
+          padding: 22px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* ===== GLITCH LOGO ===== */
+        .logo {
+          position: relative;
+          z-index: 1;
+          text-align: center;
+          font-size: 28px;
+          font-weight: 600;
+          color: black;
+          margin: 18px 0 28px;
+          letter-spacing: 0.6px;
+        }
+
+        .logo::before,
+        .logo::after {
+          content: attr(data-text);
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        .logo::before {
+          color: #ff3c3c;
+          animation: glitchRed 2s infinite;
+        }
+
+        .logo::after {
+          color: #3cafff;
+          animation: glitchBlue 2s infinite;
+        }
+
+        @keyframes glitchRed {
+          0% { transform: translate(0, 0); }
+          10% { transform: translate(-2px, -1px); }
+          20% { transform: translate(1px, 0); }
+          30% { transform: translate(-1px, 1px); }
+          40% { transform: translate(2px, -1px); }
+          50% { transform: translate(0, 1px); }
+          60% { transform: translate(-1px, 0); }
+          70% { transform: translate(1px, -1px); }
+          80% { transform: translate(-2px, 1px); }
+          90% { transform: translate(1px, 0); }
+          100% { transform: translate(0, 0); }
+        }
+
+        @keyframes glitchBlue {
+          0% { transform: translate(0, 0); }
+          12% { transform: translate(2px, 1px); }
+          24% { transform: translate(-1px, -1px); }
+          36% { transform: translate(1px, 0); }
+          48% { transform: translate(-2px, 1px); }
+          60% { transform: translate(0, -1px); }
+          72% { transform: translate(1px, 1px); }
+          84% { transform: translate(-1px, 0); }
+          96% { transform: translate(2px, -1px); }
+          100% { transform: translate(0, 0); }
+        }
+
+        /* ===== CARD ===== */
+        .card {
+          flex: 1;
+          backdrop-filter: blur(18px);
+          -webkit-backdrop-filter: blur(18px);
+          border-radius: 28px;
+          padding: 26px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ===== SLIDE TEXT ===== */
+        .slide {
+          position: relative;
+          font-family: "IBM Plex Sans", system-ui, sans-serif;
+          font-size: 17px;
+          line-height: 1.75;
+          letter-spacing: 0.015em;
+          font-weight: 400;
+          max-width: 38ch;
+          margin: 0 auto;
+
+          color: black;
+          text-align: left;
+          padding: 22px;
+
+          background: transparent;
+
+          opacity: 0;
+          transform: translateY(16px);
+          filter: blur(8px);
+          transition:
+            opacity 0.45s ease,
+            transform 0.45s ease,
+            filter 0.45s ease;
+        }
+
+        .slide.active {
+          opacity: 1;
+          transform: none;
+          filter: blur(0);
+        }
+
+        .slide::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 22px;
+          background: rgba(255, 255, 255, 0.04);
+          backdrop-filter: blur(26px);
+          -webkit-backdrop-filter: blur(26px);
+          z-index: -1;
+        }
+
+        /* ===== BUTTON ===== */
+        .button {
+          margin-top: 28px;
+          background: linear-gradient(135deg, #6a6cff, #5b5de8);
+          color: white;
+          border: none;
+          border-radius: 999px;
+          padding: 16px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          box-shadow: 0 10px 30px rgba(90, 90, 230, 0.35);
+          transition: transform 0.15s ease;
+        }
+
+        .button:active {
+          transform: scale(0.97);
+        }
+
+        .button:focus-visible {
+          outline: 3px solid rgba(255, 255, 255, 0.6);
+          outline-offset: 3px;
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+          .logo::before,
+          .logo::after,
+          .slide {
+            animation: none;
+            transition: none;
+          }
+        }
+    </style>
+</head>
+
+<body>
+<div class="app">
+
+    <div class="logo" data-text="DarkIncognito">DarkIncognito</div>
+
+    <div class="card">
+        <div id="slide" class="slide active"></div>
+        <button id="btn" class="button">Next</button>
+    </div>
+
+</div>
+
+<script>
+    const slides = [
+  "The dark web is a hidden part of the internet that cannot be accessed using normal browsers. It uses special networks like Tor to improve privacy and resist censorship. While often associated with illegal activity, it also serves important purposes for journalists, activists, and people under restrictive regimes. Learning how it works helps users understand both its risks and benefits.",
+
+  "Tor, short for The Onion Router, hides your IP address by routing your traffic through multiple encrypted relays around the world. Each relay only knows its previous and next hop, keeping your connection anonymous. On Android, apps like Orbot allow users to connect safely. Tor also protects privacy on the regular web, but users must still avoid logging into personal accounts or downloading unverified files.",
+
+  "DarkIncognito is a privacy-focused browser that stores no history, cookies, or downloads permanently. Everything exists only in memory and is cleared when the session ends. It provides a safe environment to explore privacy tools and learn about the dark web without leaving traces on the device. However, it is not a replacement for a full Tor Browser, so caution is still needed.",
+
+  "This is not a full Tor Browser. Users should never log into real accounts, share personal information, or download unknown files. Even privacy tools cannot fully protect you if unsafe practices are used. Being cautious, aware, and informed is essential for safe browsing. Mainly never trust anyone in Dark Web, However don't open any onion links without proper knowledge on it",
+
+  "This app was created to help people understand the dark web and use privacy tools responsibly. By learning about Tor, anonymous browsing, and online safety, users can protect their personal information and navigate the internet more securely. Knowledge and responsible behavior are the keys to staying safe online. thank you"
+];
+
+    let i = 0;
+    const slide = document.getElementById("slide");
+    const btn = document.getElementById("btn");
+
+    function show(first = false) {
+      if (!first) slide.classList.remove("active");
+
+      setTimeout(() => {
+        slide.textContent = slides[i];
+        slide.classList.add("active");
+        btn.textContent = i === slides.length - 1 ? "Enter Browser" : "Next";
+      }, first ? 0 : 150);
+    }
+
+    btn.onclick = () => {
+      if (i < slides.length - 1) {
+        i++;
+        show();
+      } else {
+        if (window.Android && Android.enterBrowser) {
+          Android.enterBrowser();
+        }
+      }
+    };
+
+    show(true);
+</script>
+</body>
+</html>

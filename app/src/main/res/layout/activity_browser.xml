@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#F1F3F4">
+
+    <!-- Chrome UI -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <!-- Omnibox -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/chrome_omnibox_bg"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <ImageView
+                android:id="@+id/lockIcon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@android:drawable/ic_lock_lock"
+                app:tint="#1E8E3E"/>
+
+            <EditText
+                android:id="@+id/urlBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:singleLine="true"
+                android:hint="Search or enter address"
+                android:textSize="14sp"
+                android:inputType="textUri"
+                android:textColor="#202124"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+
+
+            <ImageButton
+                android:id="@+id/btnNewTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_newtab"
+                app:tint="@null" />
+
+            <ImageButton
+                android:id="@+id/btnTabs"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_tabs"
+                app:tint="@null" />
+
+
+        </LinearLayout>
+
+        <!-- Tor Status -->
+        <TextView
+            android:id="@+id/torStatus"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginTop="6dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:gravity="center"
+            android:text="TOR"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:background="#777777"/>
+
+        <!-- Loading bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Swipe to refresh -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/webContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
