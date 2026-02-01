@@ -72,69 +72,6 @@ These limitations are **explicitly disclosed** to users inside the app.
 
 ---
 
-# 🔮 DarkIncognito-X (Planned)
-
-DarkIncognito-X is a planned next-generation evolution of DarkIncognito, designed to address architectural and security limitations inherent in Android WebView–based browsers.
-
-While DarkIncognito prioritizes education, accessibility, and responsible onboarding to Tor, DarkIncognito-X moves toward a **Tor-native browser architecture**, closer in spirit and behavior to the official Tor Browser.
-
----
-
-## Why DarkIncognito-X Is Different
-
-DarkIncognito-X is planned to use **GeckoView**, the same rendering engine family used by Firefox and Tor Browser, instead of Android’s system WebView.
-
-This architectural shift enables:
-
-- Stronger resistance to browser fingerprinting  
-- Greater control over JavaScript behavior and exposed APIs  
-- More predictable, Tor-aligned browser characteristics  
-- Reduced dependency on device-specific WebView implementations  
-- Improved security boundaries compared to system WebView usage  
-
----
-
-## Relationship to Tor Browser
-
-DarkIncognito-X aims to move significantly closer to Tor Browser behavior, while maintaining clear and honest scope boundaries.
-
-**What DarkIncognito-X aims to provide:**
-- Closer rendering behavior to Tor Browser  
-- Improved privacy characteristics compared to WebView-based browsers  
-- Better alignment with Tor network expectations  
-
-**What DarkIncognito-X does *not* aim to be:**
-- A full desktop Tor Browser replacement  
-- A guarantee of anonymity or deanonymization resistance  
-
-DarkIncognito-X is intended for **advanced users, researchers, and experimentation**, not casual or first-time Tor users.
-
----
-
-## Clear Distinction Between Projects
-
-### DarkIncognito
-- Focuses on education and awareness  
-- Provides a responsible introduction to Tor on Android  
-- Emphasizes simplicity, transparency, and accessibility  
-
-### DarkIncognito-X
-- Focuses on technical hardening and experimentation  
-- Explores deeper privacy and fingerprint-resistance techniques  
-- Targets users who understand Tor’s threat model and limitations  
-
-DarkIncognito-X is an **evolution**, not a replacement.  
-Its documentation will explicitly describe its security goals, guarantees, and remaining limitations.
-
----
-
-## Project Status
-
-DarkIncognito-X is currently **planned and under design exploration**.  
-Details may evolve as research, testing, and architectural decisions progress.
-
----
-
 ## 🛠️ Technical Notes
 
 - Language: Java
@@ -148,33 +85,81 @@ This repository contains **source code only**.
 
 ---
 
-## 👨‍💻 Author
+# 🔮 DarkIncognito-X (Planned)
 
-**Jonathan Edwards**  
-Cybersecurity student with interests in:
-- Ethical hacking
-- Privacy-focused Android development
-- Secure application design
+DarkIncognito-X is a planned next-generation evolution of DarkIncognito, designed to address architectural and security limitations inherent in Android WebView–based browsers.
 
-DarkIncognito was built to **demystify the dark web** and promote **responsible use of privacy technologies**.
+While DarkIncognito prioritizes education, accessibility, and responsible onboarding to Tor, DarkIncognito-X moves toward a **Tor-native browser architecture**, closer in spirit and behavior to the official Tor Browser—while exploring areas where a mobile-first design can go further.
 
----
 
-## 📜 License & Usage Restrictions
 
-Copyright (c) 2026 Jonathan Edwards  
-All rights reserved.
+## Why DarkIncognito-X Is Different
 
-This source code is provided **for viewing and educational purposes only**.
+DarkIncognito-X is planned to use **GeckoView**, the same rendering engine family used by Firefox and Tor Browser, instead of Android’s system WebView.
 
-- ❌ Copying
-- ❌ Modifying
-- ❌ Redistributing
-- ❌ Commercial use
+This architectural shift enables:
 
-are **not permitted** without explicit written permission from the author.
+- Stronger resistance to browser fingerprinting  
+- Greater control over JavaScript behavior and exposed APIs  
+- More predictable, Tor-aligned browser characteristics  
+- Reduced dependency on device-specific WebView implementations  
+- Improved security boundaries compared to system WebView usage  
 
-Unauthorized use of this software or its source code is strictly prohibited.
+DarkIncognito-X **inherits all core privacy and security features from DarkIncognito**, including its strict RAM-only session model.
+
+
+
+## Relationship to Tor Browser
+
+DarkIncognito-X aims to move significantly closer to Tor Browser behavior, while maintaining clear and honest scope boundaries.
+
+**What DarkIncognito-X aims to provide:**
+- Closer rendering behavior to Tor Browser  
+- Improved privacy characteristics compared to WebView-based browsers  
+- Stronger mobile-focused privacy guarantees than Tor Browser  
+
+**What DarkIncognito-X does *not* aim to be:**
+- A full desktop Tor Browser replacement  
+- A guarantee of anonymity or deanonymization resistance  
+
+DarkIncognito-X is intended for **advanced users, researchers, and experimentation**, not casual or first-time Tor users.
+
+
+
+## Where DarkIncognito-X Can Go Further Than Tor Browser
+
+DarkIncognito-X is not designed to replace Tor Browser—but in certain areas, it intentionally explores capabilities that Tor Browser does not prioritize, especially on Android.
+
+Potential areas of elevation include:
+
+- **Mobile-first privacy enforcement**  
+- **More aggressive fingerprint surface reduction**  
+- **Research-oriented flexibility and experimentation**  
+- **Clearer, deeper threat-model documentation**
+
+These elevations are **intentional trade-offs**, not claims of universal superiority.
+
+
+
+## Clear Distinction Between Projects
+
+### DarkIncognito
+- Focuses on education and awareness  
+- Provides a responsible introduction to Tor on Android  
+
+### DarkIncognito-X
+- Focuses on technical hardening and experimentation  
+- Targets users who understand Tor’s threat model and limitations  
+
+DarkIncognito-X is an **evolution**, not a replacement.
+
+
+
+## Project Status
+
+DarkIncognito-X is currently **planned and under design exploration**.  
+Details may evolve as research and development progress.
+
 
 ---
 
