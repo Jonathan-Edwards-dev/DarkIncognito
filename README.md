@@ -3,7 +3,7 @@
 DarkIncognito is a privacy-focused Android browser built to **educate users about the dark web** and provide a **minimal, RAM-only browsing experience** with Tor awareness.
 
 This project is **education-first**.  
-It does **not** attempt to make users anonymous, and it does **not** promote illegal activity.
+It is not designed to enable illegal activity, nor does it claim to provide full anonymity.
 
 ---
 
@@ -19,30 +19,31 @@ DarkIncognito does **not encourage or support illegal activity**.
 
 ---
 
-## ✨ What DarkIncognito Does
+## ✨ What DarkIncognito (v1) Provides
 
-### 🔐 Privacy-Focused by Design
-- RAM-only browsing (no history, cookies, or persistent data)
-- No downloads, no saved files
+### 🔐 Privacy-Oriented Design
+- RAM-only browsing (no history, cookies, or persistent storage)
+- No downloads
+- No saved files
 - No form or password saving
-- No local cache
+- No WebView caching
 - Screenshot blocking enabled
 - Session wiped when app is closed, minimized, or backgrounded
 
 ### 🌐 Tor Awareness (via Orbot)
-- Uses **Orbot** for Tor routing
-- Visual Tor connection indicator (connected / not connected)
-- Clear warnings when Tor is inactive
-- Onion vs clearnet visual cues in the browser UI
+- Uses **Orbot** (VPN mode) for Tor routing
+- Visual Tor connection indicator
+- Clear warning when Tor is inactive
+- Onion vs clearnet visual cues in the UI
 
-### 📚 Education Before Access
-- Mandatory educational onboarding
+### 📚 Mandatory Education Flow
+- Users must complete an educational onboarding before accessing the browser
 - Explains:
   - What the dark web is
   - How Tor and Orbot work
-  - Limitations of mobile Tor browsing
-  - Safety and responsibility guidelines
-- Users must complete education before entering the browser
+  - The limitations of mobile Tor browsing
+  - Responsible and safe usage practices
+- No shortcuts to bypass education
 
 ### 🧭 Browser Experience
 - Clean, Chrome-inspired UI
@@ -50,59 +51,130 @@ DarkIncognito does **not encourage or support illegal activity**.
 - Pull-to-refresh
 - Multiple tabs
 - Per-tab URL handling
-- Custom homepage built with HTML/CSS
+- Custom HTML/CSS homepage
 - Friendly in-app guidance for onion links instead of silent failures
 
 ---
 
-## ⚠️ Important Limitations
+## ⚠️ Known Limitations (By Design)
 
-DarkIncognito is **not** a replacement for Tor Browser.
+DarkIncognito **is NOT a Tor Browser replacement**.
 
 It does **not**:
 - Guarantee anonymity
 - Prevent browser fingerprinting
 - Protect against advanced tracking
-- Bypass all network surveillance
-- Provide full Tor isolation
+- Isolate Tor circuits per tab
+- Provide Tor-native DNS resolution
+- Offer hardened JavaScript isolation
 
-These limitations are **intentionally disclosed** to users inside the app.
+These limitations are **explicitly disclosed** to users inside the app.
+
+---
+
+# 🔮 DarkIncognito-X (Planned)
+
+DarkIncognito-X is a planned next-generation evolution of DarkIncognito, designed to address architectural and security limitations inherent in Android WebView–based browsers.
+
+While DarkIncognito prioritizes education, accessibility, and responsible onboarding to Tor, DarkIncognito-X moves toward a **Tor-native browser architecture**, closer in spirit and behavior to the official Tor Browser.
+
+---
+
+## Why DarkIncognito-X Is Different
+
+DarkIncognito-X is planned to use **GeckoView**, the same rendering engine family used by Firefox and Tor Browser, instead of Android’s system WebView.
+
+This architectural shift enables:
+
+- Stronger resistance to browser fingerprinting  
+- Greater control over JavaScript behavior and exposed APIs  
+- More predictable, Tor-aligned browser characteristics  
+- Reduced dependency on device-specific WebView implementations  
+- Improved security boundaries compared to system WebView usage  
+
+---
+
+## Relationship to Tor Browser
+
+DarkIncognito-X aims to move significantly closer to Tor Browser behavior, while maintaining clear and honest scope boundaries.
+
+**What DarkIncognito-X aims to provide:**
+- Closer rendering behavior to Tor Browser  
+- Improved privacy characteristics compared to WebView-based browsers  
+- Better alignment with Tor network expectations  
+
+**What DarkIncognito-X does *not* aim to be:**
+- A full desktop Tor Browser replacement  
+- A guarantee of anonymity or deanonymization resistance  
+
+DarkIncognito-X is intended for **advanced users, researchers, and experimentation**, not casual or first-time Tor users.
+
+---
+
+## Clear Distinction Between Projects
+
+### DarkIncognito
+- Focuses on education and awareness  
+- Provides a responsible introduction to Tor on Android  
+- Emphasizes simplicity, transparency, and accessibility  
+
+### DarkIncognito-X
+- Focuses on technical hardening and experimentation  
+- Explores deeper privacy and fingerprint-resistance techniques  
+- Targets users who understand Tor’s threat model and limitations  
+
+DarkIncognito-X is an **evolution**, not a replacement.  
+Its documentation will explicitly describe its security goals, guarantees, and remaining limitations.
+
+---
+
+## Project Status
+
+DarkIncognito-X is currently **planned and under design exploration**.  
+Details may evolve as research, testing, and architectural decisions progress.
 
 ---
 
 ## 🛠️ Technical Notes
 
-- Written in **Java**
-- Android **WebView-based** (custom SecureWebView)
-- Tor routing handled externally via **Orbot**
-- No APK or release binaries included in this repository
-- Keystore, APKs, and build outputs are intentionally excluded
+- Language: Java
+- UI: XML + custom HTML/CSS assets
+- Web engine: Android WebView (SecureWebView)
+- Tor routing: Orbot (external)
+- No APK, AAB, or keystore files are included in this repository
+- Build outputs and signing materials are intentionally excluded
 
 This repository contains **source code only**.
 
 ---
 
-## 📦 Running the Project
-
-1. Clone the repository
-2. Open in Android Studio
-3. Install **Orbot** on the test device
-4. Enable Orbot VPN mode
-5. Build and run the app
-
-To distribute the app, generate a **signed release APK** using your own keystore.
-
----
-
 ## 👨‍💻 Author
 
-**Jonathan Edwards (JD)**  
+**Jonathan Edwards**  
 Cybersecurity student with interests in:
 - Ethical hacking
 - Privacy-focused Android development
 - Secure application design
 
 DarkIncognito was built to **demystify the dark web** and promote **responsible use of privacy technologies**.
+
+---
+
+## 📜 License & Usage Restrictions
+
+Copyright (c) 2026 Jonathan Edwards  
+All rights reserved.
+
+This source code is provided **for viewing and educational purposes only**.
+
+- ❌ Copying
+- ❌ Modifying
+- ❌ Redistributing
+- ❌ Commercial use
+
+are **not permitted** without explicit written permission from the author.
+
+Unauthorized use of this software or its source code is strictly prohibited.
 
 ---
 
